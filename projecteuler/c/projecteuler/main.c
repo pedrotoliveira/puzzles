@@ -10,7 +10,8 @@
 #include <stdlib.h>
 
 /** Prototypes */
-problem1();
+void problem1();
+void problem2();
 
 /*
  * Main
