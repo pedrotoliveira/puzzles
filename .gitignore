@@ -1,0 +1,16 @@
+# General Folders #
+./**/bin/*
+./**/dist/*
+./**/target/*
+
+# C Files #
+*.o
+*.d
+
+# Java Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
