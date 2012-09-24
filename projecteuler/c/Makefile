@@ -87,7 +87,7 @@ all: .all-post
 # Add your pre 'all' code here...
 
 .all-post: .all-impl
-# Add your post 'all' code here...
+	@cd ${CND_BUILDDIR} && mv c projecteuler
 
 
 # build tests
