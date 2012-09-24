@@ -15,3 +15,5 @@
 *.war
 *.ear
 *~
+/projecteuler/c/dist/
+/projecteuler/c/build/
