@@ -35,9 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/projecteuler/problem_2.o \
-	${OBJECTDIR}/projecteuler/problem_1.o \
-	${OBJECTDIR}/projecteuler/main.o
+	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/arrays_sort.o
 
 
 # C Compiler Flags
@@ -64,20 +63,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME} ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/projecteuler/problem_2.o: projecteuler/problem_2.c 
-	${MKDIR} -p ${OBJECTDIR}/projecteuler
+${OBJECTDIR}/src/main.o: src/main.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/projecteuler/problem_2.o projecteuler/problem_2.c
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.c
 
-${OBJECTDIR}/projecteuler/problem_1.o: projecteuler/problem_1.c 
-	${MKDIR} -p ${OBJECTDIR}/projecteuler
+${OBJECTDIR}/src/arrays_sort.o: src/arrays_sort.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/projecteuler/problem_1.o projecteuler/problem_1.c
-
-${OBJECTDIR}/projecteuler/main.o: projecteuler/main.c 
-	${MKDIR} -p ${OBJECTDIR}/projecteuler
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/projecteuler/main.o projecteuler/main.c
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/arrays_sort.o src/arrays_sort.c
 
 # Subprojects
 .build-subprojects:

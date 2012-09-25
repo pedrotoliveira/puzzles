@@ -48,7 +48,7 @@
 MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
-PROJECT_NAME=projecteuler
+PROJECT_NAME=arrayspuzzles
 
 
 # build
@@ -109,7 +109,6 @@ test: .test-post
 .test-post: .test-impl
 # Add your post 'test' code here...
 
-
 # help
 help: .help-post
 
@@ -118,8 +117,6 @@ help: .help-post
 
 .help-post: .help-impl
 # Add your post 'help' code here...
-
-
 
 # include project implementation makefile
 include nbproject/Makefile-impl.mk
