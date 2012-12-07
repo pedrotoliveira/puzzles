@@ -17,6 +17,7 @@ public final class FlowControl {
         switchingInEnum(Colors.green);
         fallThrouthLogic(5);
         labeledWhileLoop(15);
+        doLoopWhile();
     }
 
     private static void assigments() {
@@ -85,5 +86,14 @@ public final class FlowControl {
             System.out.println("Another year.");
             age++;
         }
+    }
+    
+    private static void doLoopWhile() {
+        int i=7;
+        do {
+            //Always execute at least one time!
+            System.out.print(i + " ");
+            i++;
+        } while(i != 10);
     }
 }
