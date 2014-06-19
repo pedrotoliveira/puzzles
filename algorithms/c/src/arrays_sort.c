@@ -63,11 +63,8 @@ void swap_position(int toSort[], int pos) {
  * @return
  */
 void heap_sort(int *toSort, int count) {
-	printf("\n\n\ninicio.\n");
 	heapify(toSort, count);
-
 	print_array(toSort, count);
-	printf("Sfit Heap - length: %d \n ", count);
 	int end = count - 1;
 	while (end > 0) {
 		printf("trocando: %d por %d \n", toSort[end], toSort[0]);
@@ -79,7 +76,6 @@ void heap_sort(int *toSort, int count) {
 		siftDown(toSort, 0, end);
 		print_array(toSort, count);
 	}
-	printf("fim. \n\n\n");
 }
 
 void heapify(int *toSort, int count) {
@@ -106,7 +102,7 @@ void siftDown(int *toSort, int start, int end) {
 		}
 
 		if (swap != root) {
-			printf("trocando: %d por %d \n", toSort[root], toSort[child]);
+			printf("swap: %d to %d \n", toSort[root], toSort[child]);
 			int pos = toSort[root];
 			toSort[root] = toSort[child];
 			toSort[child] = pos;
