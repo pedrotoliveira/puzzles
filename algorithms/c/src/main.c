@@ -8,23 +8,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#define getLenght(x)  (sizeof(x) / sizeof(x[0]))
+#include "header.h"
 
 void bubble_sort(int toSort[], int lenght);
 void heap_sort(int toSort[], int length);
-
-static void print_array(int toPrint[], int lenght) {
-	printf("{");
-	int index;
-	for (index  = 0; index < lenght; index++)  {
-		printf("%d", toPrint[index]);
-		if (index != lenght -1) {
-			printf(", ");
-		}
-	}
-	printf("}\n");
-}
+void print_array(int toPrint[], int length);
 
 /*
  * Main
@@ -43,17 +31,17 @@ int main(int argc, char** argv) {
 	printf("After - ");
 	print_array(array_a, getLenght(array_a));
 
-	int array_b[] = { 25, 528, 15, 89, 84, 21, 9, 64, 5218, 1, 87 };
+	int heap[] = { 6, 5, 3, 1, 8, 7, 2, 4 };
 
-	printf("sizeof of array: %lu\n", sizeof(array_b));
-	printf("Length of array: %lu\n", sizeof(array_b) / sizeof(array_b[0]));
+	printf("sizeof of array: %lu\n", sizeof(heap));
+	printf("Length of array: %lu\n", sizeof(heap) / sizeof(heap[0]));
 
 	printf("Trying heap sort array \n ");
 	printf("Before - ");
-	print_array(array_b, getLenght(array_b));
-	heap_sort(array_b, getLenght(array_b));
+	print_array(heap, getLenght(heap));
+	heap_sort(heap, getLenght(heap));
 	printf("After - ");
-	print_array(array_b, getLenght(array_b));
+	print_array(heap, getLenght(heap));
 
 	return (EXIT_SUCCESS);
 }

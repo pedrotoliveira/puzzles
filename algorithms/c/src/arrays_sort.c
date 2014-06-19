@@ -1,9 +1,23 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include "header.h"
 
 /** prototypes */
 void swap_position(int toSort[], int pos);
-void siftDown(int *toSort, int begin, int length);
-void heapify(int *toSort, int length);
+void siftDown(int *toSort, int start, int end);
+void heapify(int *toSort, int count);
+
+void print_array(int *toPrint, int length) {
+	printf("{");
+	int index;
+	for (index  = 0; index < length; index++)  {
+		printf("%d", toPrint[index]);
+		if (index != length -1) {
+			printf(", ");
+		}
+	}
+	printf("}\n");
+}
 
 /**
  * The bubble sort works by iterating down an array to be sorted from the first element to the last,
@@ -17,7 +31,7 @@ void heapify(int *toSort, int length);
  * @param lenght lenght of array
  * @return 0 to success
  */
-int bubble_sort(int toSort[], int length) {
+void bubble_sort(int toSort[], int length) {
 	int i, j;
 
 	for (i = 0; i < length; i++) {
@@ -28,7 +42,6 @@ int bubble_sort(int toSort[], int length) {
 			}
 		}
 	}
-	return EXIT_SUCCESS;
 }
 
 void swap_position(int toSort[], int pos) {
@@ -49,43 +62,55 @@ void swap_position(int toSort[], int pos) {
  * @param lenght
  * @return
  */
-int heap_sort(int toSort[], int length) {
-	heapify(toSort, length);
+void heap_sort(int *toSort, int count) {
+	printf("\n\n\ninicio.\n");
+	heapify(toSort, count);
 
-	int end = length - 1;
+	print_array(toSort, count);
+	printf("Sfit Heap - length: %d \n ", count);
+	int end = count - 1;
 	while (end > 0) {
-		int pos = toSort[end];
+		printf("trocando: %d por %d \n", toSort[end], toSort[0]);
+		int aux = toSort[end];
 		toSort[end] = toSort[0];
-		toSort[0] = pos;
-		siftDown(toSort, 0, end - 1);
+		toSort[0] = aux;
 		end--;
+		printf("end: %d\n", end);
+		siftDown(toSort, 0, end);
+		print_array(toSort, count);
 	}
-	return EXIT_SUCCESS;
+	printf("fim. \n\n\n");
 }
 
-void heapify(int *toSort, int length) {
-	int begin = (length - 2) / 2;
-	while (begin >= 0) {
-		siftDown(toSort, begin, length);
-		begin--;
+void heapify(int *toSort, int count) {
+	int start = (count - 2) / 2;
+	while (start >= 0) {
+		siftDown(toSort, start, count - 1);
+		start--;
 	}
 }
 
-void siftDown(int *toSort, int begin, int length) {
-	int parent = begin * 2 + 1;
+void siftDown(int *toSort, int start, int end) {
+	int root = start;
 
-	while (parent <= length) {
-		int child = 2 * parent + 1;
+	while (root * 2 + 1 <= end) {
+		int child = 2 * root + 1;
+		int swap = root;
 
-		if ((child + 1 <= length) && (toSort[child] < toSort[child + 1])) {
-			child += 1;
+		if (toSort[swap] < toSort[child]) {
+			swap = child;
 		}
 
-		if (toSort[parent] < toSort[child]) {
-			int pos = toSort[parent];
-			toSort[parent] = toSort[child];
+		if ((child + 1 <= end) && (toSort[swap] < toSort[child + 1])) {
+			swap = child + 1;
+		}
+
+		if (swap != root) {
+			printf("trocando: %d por %d \n", toSort[root], toSort[child]);
+			int pos = toSort[root];
+			toSort[root] = toSort[child];
 			toSort[child] = pos;
-			parent = child;
+			root = swap;
 		} else {
 			return;
 		}
