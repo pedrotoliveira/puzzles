@@ -11,8 +11,8 @@ public class StackOverFlow {
     public static void main(String args[]) {
         int[] array = getArray();
         //int[] array = {780, 19754, 17256, 2068, 690, 10861, 9534, 17754, 14673, 16194, 19440};
-        recursiveBubbleSort(array);
-        //bubbleSort(array);
+        //recursiveBubbleSort(array);
+        bubbleSort(array);
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }

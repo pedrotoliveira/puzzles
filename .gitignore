@@ -1,4 +1,23 @@
 # General Folders #
+/*.*~
+/build/*
+/.classpath
+/.gradle/*
+/**/build/*
+/.project
+/.settings/org.eclipse.jdt.core.prefs
+/**/.classpath
+/**/.project
+/**/.settings/*
+/**/*.class
+/**/target/*
+/**/bin/*
+*.log
+/**/*.log
+nb*
+/**/nb-configuration.xml
+/.idea/*
+*.iml
 ./**/bin/*
 ./**/dist/*
 ./**/target/*
