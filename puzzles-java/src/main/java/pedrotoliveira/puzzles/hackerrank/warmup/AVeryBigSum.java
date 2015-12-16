@@ -18,9 +18,7 @@ import java.util.List;
  *
  * Constraints 1≤N≤10 0≤A[i]≤1010
  *
- * Sample Input 
- * 5 
- * 1000000001 1000000002 1000000003 1000000004 1000000005
+ * Sample Input 5 1000000001 1000000002 1000000003 1000000004 1000000005
  *
  * Output Print a single value equal to the sum of the elements in the array. In
  * the above sample, you would print 5000000015.
@@ -41,12 +39,8 @@ public class AVeryBigSum {
         this.size = size;
         this.bigNumbers = bigNumbers;
     }
-    
+
     public Long doSum() {
-        Long sum = 0l;
-        for (Long bigNumber : bigNumbers) {
-            sum += bigNumber;
-        }
-        return sum;
-    }    
+        return bigNumbers.stream().limit((long) size).mapToLong(Long::longValue).sum();
+    }
 }
