@@ -48,7 +48,7 @@
 MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
-PROJECT_NAME=arrayspuzzles
+PROJECT_NAME=algorithms
 
 
 # build
