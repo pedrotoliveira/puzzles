@@ -17,3 +17,5 @@
 *~
 /projecteuler/c/dist/
 /projecteuler/c/build/
+/puzzles-java/nbproject/
+/puzzles-java/target/

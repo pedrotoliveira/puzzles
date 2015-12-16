@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 
 static void swap_position(int toSort[], int pos) {

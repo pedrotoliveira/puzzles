@@ -35,8 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/main.o \
-	${OBJECTDIR}/src/arrays_sort.o
+	${OBJECTDIR}/src/arrays_sort.o \
+	${OBJECTDIR}/src/main.o
 
 
 # C Compiler Flags
@@ -61,17 +61,17 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME} ${OBJECTFILES} ${LDLIBSOPTIONS} 
-
-${OBJECTDIR}/src/main.o: src/main.c 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.c) -g -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.c
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME} ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/src/arrays_sort.o: src/arrays_sort.c 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.c) -g -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/arrays_sort.o src/arrays_sort.c
+	${RM} "$@.d"
+	$(COMPILE.c) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/arrays_sort.o src/arrays_sort.c
+
+${OBJECTDIR}/src/main.o: src/main.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.c) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.c
 
 # Subprojects
 .build-subprojects:
