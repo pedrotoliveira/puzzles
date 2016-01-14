@@ -1,4 +1,4 @@
-package pedrotoliveira.puzzles.hackerrank.warmup;
+package pedrotoliveira.puzzles.hackerrank.algorithm.warmup;
 
 import java.math.BigInteger;
 import java.util.List;

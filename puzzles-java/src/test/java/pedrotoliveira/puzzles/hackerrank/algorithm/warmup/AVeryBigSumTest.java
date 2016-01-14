@@ -1,5 +1,6 @@
-package pedrotoliveira.puzzles.hackerrank.warmup;
+package pedrotoliveira.puzzles.hackerrank.algorithm.warmup;
 
+import pedrotoliveira.puzzles.hackerrank.algorithm.warmup.AVeryBigSum;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
