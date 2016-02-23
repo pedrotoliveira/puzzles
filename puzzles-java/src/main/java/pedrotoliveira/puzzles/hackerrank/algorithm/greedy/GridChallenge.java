@@ -57,14 +57,22 @@ class Grid {
 	}
 
 	public String canBeRearranged() {
-		boolean canBe = false;		
+		boolean canBe = true;
+		long[] lineSum = new long[gridSize];
 		for (int i = 0; i < gridSize; i++) {
 			for (int j=0; j < gridSize - 1; j++) {
 				char temp = gridChars[i][j];
 				if (gridChars[i][j + 1] >  gridChars[i][j]) {
 					gridChars[i][j] = gridChars[i][j + 1];
-					gridChars[i][j + 1] = temp;					
+					gridChars[i][j + 1] = temp;
+					lineSum[i] =+ Character.getNumericValue(gridChars[i][j]);
 				}
+			}
+		}
+		
+		for (int i=0; i < gridSize - 1; i++) {
+			if (lineSum[i] > lineSum[i+1]) {
+				canBe = false;
 			}
 		}
 		

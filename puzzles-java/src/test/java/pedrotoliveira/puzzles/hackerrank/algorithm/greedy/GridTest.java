@@ -29,4 +29,15 @@ public class GridTest {
 		assertThat(grid.canBeRearranged(), equalTo("YES"));
 	}
 	
+	
+	@Test
+	public void testCanBeRearrangedNO() {
+		grid.addLine("fghij");
+		grid.addLine("olmkn");
+		grid.addLine("ebacd");
+		grid.addLine("trpqs");
+		grid.addLine("xywuv");
+		
+		assertThat(grid.canBeRearranged(), equalTo("NO"));
+	}
 }
