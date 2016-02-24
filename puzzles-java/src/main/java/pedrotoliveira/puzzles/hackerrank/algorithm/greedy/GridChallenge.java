@@ -1,10 +1,6 @@
 package pedrotoliveira.puzzles.hackerrank.algorithm.greedy;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 /**
  *
@@ -21,7 +17,7 @@ public class GridChallenge {
 			int gridSize = in.nextInt();
 			final Grid grid = new Grid(gridSize);
 			while (gridSize-- > 0) {
-				String line = in.nextLine();
+				String line = in.next();
 				grid.addLine(line);
 			}
 
@@ -58,24 +54,33 @@ class Grid {
 
 	public String canBeRearranged() {
 		boolean canBe = true;
-		long[] lineSum = new long[gridSize];
 		for (int i = 0; i < gridSize; i++) {
-			for (int j=0; j < gridSize - 1; j++) {
-				char temp = gridChars[i][j];
-				if (gridChars[i][j + 1] >  gridChars[i][j]) {
-					gridChars[i][j] = gridChars[i][j + 1];
-					gridChars[i][j + 1] = temp;
-					lineSum[i] =+ Character.getNumericValue(gridChars[i][j]);
+			char[] line = gridChars[i];
+			Arrays.sort(line);
+		}
+
+		for (int i = 0; i < gridSize - 1; i++) {
+			for (int j = 0; j < gridSize - 1; j++) {
+				int n1 = Character.getNumericValue(gridChars[i][j]);
+				int n2 = Character.getNumericValue(gridChars[i][j + 1]);
+				int n3 = Character.getNumericValue(gridChars[j][i]);
+				int n4 = Character.getNumericValue(gridChars[j + 1][i]);
+				if (n1 > n2 || n3 > n4) {
+					canBe = false;
 				}
 			}
 		}
-		
-		for (int i=0; i < gridSize - 1; i++) {
-			if (lineSum[i] > lineSum[i+1]) {
-				canBe = false;
-			}
-		}
-		
+		printGrid(gridChars);
 		return canBe ? "YES" : "NO";
+	}
+
+	private void printGrid(char[][] gridChars) {
+		for (int i = 0; i < this.gridChars.length; i++) {
+			for (int j = 0; j < this.gridChars.length; j++) {
+				System.out.print(Character.getNumericValue(this.gridChars[i][j]));
+				System.out.print(" ");
+			}
+			System.out.println("");
+		}
 	}
 }
