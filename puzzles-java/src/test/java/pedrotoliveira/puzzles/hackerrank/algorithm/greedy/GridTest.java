@@ -2,8 +2,10 @@ package pedrotoliveira.puzzles.hackerrank.algorithm.greedy;
 
 import java.util.Arrays;
 import java.util.Collection;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -16,9 +18,9 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(value = Parameterized.class)
 public class GridTest {
 
-	private int gridSize;
-	private String[] lines;
-	private String expected;
+	private final int gridSize;
+	private final String[] lines;
+	private final String expected;
 
 	public GridTest(int gridSize, String[] lines, String expected) {
 		this.gridSize = gridSize;
