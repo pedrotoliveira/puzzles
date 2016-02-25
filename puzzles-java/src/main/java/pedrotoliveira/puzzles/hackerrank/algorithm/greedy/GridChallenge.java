@@ -31,7 +31,6 @@ public class GridChallenge {
             }
             out.println(grid.canBeRearranged());
         }
-        out.close();
     }
 
     public static void main(String[] args) {
