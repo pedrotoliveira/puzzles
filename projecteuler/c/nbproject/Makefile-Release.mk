@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux-x86
+CND_PLATFORM=GNU-Linux
 CND_DLIB_EXT=so
 CND_CONF=Release
 CND_DISTDIR=dist
@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/projecteuler/problem_2.o \
+	${OBJECTDIR}/projecteuler/main.o \
 	${OBJECTDIR}/projecteuler/problem_1.o \
-	${OBJECTDIR}/projecteuler/main.o
+	${OBJECTDIR}/projecteuler/problem_2.o
 
 
 # C Compiler Flags
@@ -62,22 +62,22 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME} ${OBJECTFILES} ${LDLIBSOPTIONS} 
-
-${OBJECTDIR}/projecteuler/problem_2.o: projecteuler/problem_2.c 
-	${MKDIR} -p ${OBJECTDIR}/projecteuler
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/projecteuler/problem_2.o projecteuler/problem_2.c
-
-${OBJECTDIR}/projecteuler/problem_1.o: projecteuler/problem_1.c 
-	${MKDIR} -p ${OBJECTDIR}/projecteuler
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/projecteuler/problem_1.o projecteuler/problem_1.c
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/${PROJECT_NAME} ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/projecteuler/main.o: projecteuler/main.c 
 	${MKDIR} -p ${OBJECTDIR}/projecteuler
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/projecteuler/main.o projecteuler/main.c
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/projecteuler/main.o projecteuler/main.c
+
+${OBJECTDIR}/projecteuler/problem_1.o: projecteuler/problem_1.c 
+	${MKDIR} -p ${OBJECTDIR}/projecteuler
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/projecteuler/problem_1.o projecteuler/problem_1.c
+
+${OBJECTDIR}/projecteuler/problem_2.o: projecteuler/problem_2.c 
+	${MKDIR} -p ${OBJECTDIR}/projecteuler
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/projecteuler/problem_2.o projecteuler/problem_2.c
 
 # Subprojects
 .build-subprojects:
