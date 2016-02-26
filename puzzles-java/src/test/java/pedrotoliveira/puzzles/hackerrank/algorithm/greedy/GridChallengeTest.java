@@ -33,37 +33,37 @@ import org.junit.Test;
  */
 public class GridChallengeTest {
 
-    private InputStream input;
-    private File expectedOutput;
+	private InputStream input;
+	private File expectedOutput;
 
-    @Before
-    public void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		ClassLoader classLoader = this.getClass().getClassLoader();
-        this.input = new FileInputStream(classLoader.getResource("GridChallengeTestCase10").getFile());
-        this.expectedOutput = new File(classLoader.getResource("GridChallengeTestCase10Output").getFile());
-    }
+		this.input = new FileInputStream(classLoader.getResource("GridChallengeTestCase10").getFile());
+		this.expectedOutput = new File(classLoader.getResource("GridChallengeTestCase10Output").getFile());
+	}
 
-    @After
-    public void tearDown() throws Exception {
-        try {
-            input.close();
-        } catch (IOException io) {
-            //Do nothing
-        }
-    }
+	@After
+	public void tearDown() throws Exception {
+		try {
+			input.close();
+		} catch (IOException io) {
+			//Do nothing
+		}
+	}
 
-    @Test
-    public void testPrintSolution() throws Exception {
-        File testOutput = new File("tmp/GridChallengeTestOutput");
-        if (testOutput.exists()) {
-            testOutput.delete();
-        } else {
-            testOutput.createNewFile();
-        }
-        PrintStream printStream = new PrintStream(testOutput);
-        GridChallenge challenge = new GridChallenge(input, printStream);
-        challenge.printSolution();
-        assertTrue(FileUtils.contentEquals(expectedOutput, testOutput));
-    }
+	@Test
+	public void testPrintSolution() throws Exception {
+		File testOutput = new File("tmp/GridChallengeTestOutput");
+		if (testOutput.exists()) {
+			testOutput.delete();
+		} else {
+			testOutput.createNewFile();
+		}
+		PrintStream printStream = new PrintStream(testOutput);
+		GridChallenge challenge = new GridChallenge(input, printStream);
+		challenge.printSolution();
+		assertTrue(FileUtils.contentEquals(expectedOutput, testOutput));
+	}
 
 }

@@ -1,12 +1,10 @@
 package pedrotoliveira.puzzles.hackerrank.algorithm.warmup;
 
-import pedrotoliveira.puzzles.hackerrank.algorithm.warmup.AVeryBigSum;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -22,7 +20,7 @@ public class AVeryBigSumTest {
     }
 
     /**
-     *  * Problem Statement
+     * Problem Statement
      *
      * You are given an array of integers of size N. You need to print the sum
      * of the elements in the array, keeping in mind that some of those integers
