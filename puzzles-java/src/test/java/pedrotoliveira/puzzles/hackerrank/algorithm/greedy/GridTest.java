@@ -28,7 +28,7 @@ public class GridTest {
 		this.expected = expected;
 	}
 
-	@Parameters(name = "{index}: ")
+	@Parameters(name = "Test Case {index}:")
 	public static Collection<Object[]> testData() {
 		return Arrays.asList(new Object[][]{
 			{5, new String[]{"ebacd", "fghij", "olmkn", "trpqs", "xywuv"}, "YES"},
@@ -36,7 +36,10 @@ public class GridTest {
 			{3, new String[]{"hcd", "awc", "shm"}, "NO"},
 			{3, new String[]{"sur", "eyy", "gxy"}, "NO"},
 			{3, new String[]{"nyx", "ynx", "xyt"}, "YES"},
-			{4, new String[]{"vpvv", "pvvv", "vzzp", "zzyy"}, "YES"}
+			{4, new String[]{"vpvv", "pvvv", "vzzp", "zzyy"}, "YES"},
+			{1, new String[]{"z"}, "YES"},
+			{2, new String[]{"zx", "zz"}, "YES"},
+			{2, new String[]{"iv", "ms"}, "NO"}
 		});
 	}
 

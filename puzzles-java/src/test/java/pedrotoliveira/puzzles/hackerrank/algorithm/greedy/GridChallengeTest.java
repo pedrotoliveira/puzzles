@@ -35,10 +35,10 @@ public class GridChallengeTest {
 
     private InputStream input;
     private File expectedOutput;
-    private ClassLoader classLoader = getClass().getClassLoader();
 
     @Before
     public void setUp() throws Exception {
+		ClassLoader classLoader = this.getClass().getClassLoader();
         this.input = new FileInputStream(classLoader.getResource("GridChallengeTestCase10").getFile());
         this.expectedOutput = new File(classLoader.getResource("GridChallengeTestCase10Output").getFile());
     }
