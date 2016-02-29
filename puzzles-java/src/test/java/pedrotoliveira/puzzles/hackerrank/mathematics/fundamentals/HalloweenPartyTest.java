@@ -15,10 +15,10 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class HalloweenPartyTest {
 	
-	private final int cuts;
-	private final int expectedPieces;
+	private final long cuts;
+	private final long expectedPieces;
 
-	public HalloweenPartyTest(int cuts, int expectedPieces) {
+	public HalloweenPartyTest(long cuts, long expectedPieces) {
 		this.cuts = cuts;
 		this.expectedPieces = expectedPieces;
 	}
@@ -28,13 +28,16 @@ public class HalloweenPartyTest {
 		assertThat(new HalloweenParty().countPieces(cuts), equalTo(expectedPieces));
 	}	
 	
-	@Parameterized.Parameters(name = "Test Case {index}:")
+	@Parameterized.Parameters(name = "Test Case {index}: cuts={0} exp={1}")
 	public static Collection<Object[]> testData() {
 		return Arrays.asList(new Object[][] {
-			{5, 6},
-			{6, 9},
-			{7, 12},
-			{8, 16}
+			{5L, 6L},
+			{6L, 9L},
+			{7L, 12L},
+			{8L, 16L},
+			{1856378L, 861534819721L},
+			{525494L, 69035986009L},
+			{4137970L, 4280698930225L}
 		});
 	}
 }

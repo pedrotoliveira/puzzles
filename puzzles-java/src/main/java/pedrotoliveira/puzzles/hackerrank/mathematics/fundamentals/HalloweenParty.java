@@ -9,9 +9,9 @@ import pedrotoliveira.puzzles.hackerrank.HackerRankSolution;
  */
 public class HalloweenParty extends HackerRankSolution {
 		
-	public int countPieces(int cuts) {		
-		int verticalCut = 0;
-		int horizontalCut = 0;
+	public long countPieces(long cuts) {		
+		long verticalCut = 0;
+		long horizontalCut = 0;
 		for (int i=1; i <= cuts; i++) {
 			if (i % 2 == 0) {
 				horizontalCut++;
