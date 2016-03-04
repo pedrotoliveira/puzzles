@@ -2,6 +2,7 @@ package pedrotoliveira.puzzles.hackerrank.algorithm.greedy;
 
 import java.util.Arrays;
 import java.util.Collection;
+import org.junit.Rule;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -21,14 +22,14 @@ public class GridTest {
 	private final int gridSize;
 	private final String[] lines;
 	private final String expected;
-
+	
 	public GridTest(int gridSize, String[] lines, String expected) {
 		this.gridSize = gridSize;
 		this.lines = lines;
 		this.expected = expected;
 	}
 
-	@Parameters(name = "Test Case {index}:")
+	@Parameters(name = "Test Case {index}:" )
 	public static Collection<Object[]> testData() {
 		return Arrays.asList(new Object[][]{
 			{5, new String[]{"ebacd", "fghij", "olmkn", "trpqs", "xywuv"}, "YES"},
@@ -39,7 +40,8 @@ public class GridTest {
 			{4, new String[]{"vpvv", "pvvv", "vzzp", "zzyy"}, "YES"},
 			{1, new String[]{"z"}, "YES"},
 			{2, new String[]{"zx", "zz"}, "YES"},
-			{2, new String[]{"iv", "ms"}, "NO"}
+			{2, new String[]{"iv", "ms"}, "NO"},
+			{3, new String[]{"efg", "bca", "zwy"}, "NO"}
 		});
 	}
 

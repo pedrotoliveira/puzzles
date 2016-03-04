@@ -22,7 +22,7 @@ public class TaumAndBDayTest {
 	}
 	
 	@Test
-	public void testConvertGifts() {
+	public void testConvertGifts() {		
 		new TaumAndBDay().convertGifts(blackGifts, whiteGifts, convertCost);
 	}
 }
