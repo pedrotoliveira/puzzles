@@ -12,7 +12,15 @@ public class TaumAndBDay extends HackerRankSolution {
 
 	@Override
 	public void printSolution() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		int testCases = in.nextInt();
+		while(testCases-- > 0) {
+			int blackQuant = in.nextInt();
+			int whiteQuant = in.nextInt();
+			int blackCost = in.nextInt();
+			int whiteCost = in.nextInt();
+			int convert = in.nextInt();
+			out.println(convertGifts(new Gifts(blackQuant, blackCost), new Gifts(whiteQuant, whiteCost), convert));
+		}
 	}
 
 	public static void main(String[] args) {
