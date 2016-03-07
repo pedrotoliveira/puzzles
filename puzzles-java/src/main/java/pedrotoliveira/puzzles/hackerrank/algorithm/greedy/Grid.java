@@ -22,7 +22,7 @@ public class Grid {
 		this.gridChars = new char[gridSize][gridSize];
 	}
 
-	public void addLine(String line) {
+	public Grid addLine(String line) {
 		if (line.toCharArray().length > gridSize) {
 			throw new IllegalArgumentException("Line Size Must Have at Most " + gridSize + " characters");
 		}
@@ -35,8 +35,9 @@ public class Grid {
 			}
 		}
 		addedLines++;
+		return this;
 	}
-
+	
 	public String canBeRearranged() {
 		boolean canBe = true;
 		for (int i = 0; i < gridSize; i++) {
