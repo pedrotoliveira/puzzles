@@ -6,19 +6,19 @@ package pedrotoliveira.puzzles.hackerrank.algorithm.implementation;
  */
 public class Gifts {
 
-	private final int quantity;
-	private final int cost;
+	private final long quantity;
+	private final long cost;
 
-	public Gifts(int quantity, int cost) {
+	public Gifts(long quantity, long cost) {
 		this.quantity = quantity;
 		this.cost = cost;
 	}
 
-	public int getQuantity() {
+	public long getQuantity() {
 		return quantity;
 	}
 
-	public int getCost() {
+	public long getCost() {
 		return cost;
 	}
 

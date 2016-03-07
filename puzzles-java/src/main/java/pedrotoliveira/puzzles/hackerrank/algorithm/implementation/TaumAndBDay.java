@@ -14,11 +14,11 @@ public class TaumAndBDay extends HackerRankSolution {
 	public void printSolution() {
 		int testCases = in.nextInt();
 		while(testCases-- > 0) {
-			int blackQuant = in.nextInt();
-			int whiteQuant = in.nextInt();
-			int blackCost = in.nextInt();
-			int whiteCost = in.nextInt();
-			int convert = in.nextInt();
+			long blackQuant = in.nextLong();
+			long whiteQuant = in.nextLong();
+			long blackCost = in.nextLong();
+			long whiteCost = in.nextLong();
+			long convert = in.nextLong();
 			out.println(convertGifts(new Gifts(blackQuant, blackCost), new Gifts(whiteQuant, whiteCost), convert));
 		}
 	}
@@ -27,9 +27,9 @@ public class TaumAndBDay extends HackerRankSolution {
 		new TaumAndBDay().printSolution();
 	}
 
-	public int convertGifts(final Gifts blackGifts, final Gifts whiteGifts, int convertCost) {
-		int blackGiftCost = blackGifts.getCost();
-		int whiteGiftCost = whiteGifts.getCost();
+	public long convertGifts(final Gifts blackGifts, final Gifts whiteGifts, long convertCost) {
+		long blackGiftCost = blackGifts.getCost();
+		long whiteGiftCost = whiteGifts.getCost();
 		
 		if (blackGiftCost > whiteGiftCost && blackGiftCost > (whiteGiftCost + convertCost)) {
 			return whiteGifts.getQuantity() * whiteGiftCost + (blackGifts.getQuantity() * (whiteGiftCost + convertCost));
