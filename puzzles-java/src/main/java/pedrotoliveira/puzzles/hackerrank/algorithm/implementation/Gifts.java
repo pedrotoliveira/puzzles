@@ -1,8 +1,7 @@
 package pedrotoliveira.puzzles.hackerrank.algorithm.implementation;
 
 /**
- *
- * @author p-poliveira
+ * @author pedrotoliveira
  */
 public class Gifts {
 
